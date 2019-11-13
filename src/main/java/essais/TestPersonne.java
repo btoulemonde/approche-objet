@@ -10,6 +10,7 @@ public class TestPersonne {
 		AdressePostale a = new AdressePostale(12, "rue du chevrefeuille", 34000, "Montpellier");
 
 		Personne p1 = new Personne("Toulemonde", "Baptiste", a);
+		
 		p1.afficherIdentite();
 
 		AdressePostale b = new AdressePostale(69, "rue de Douarnenez", 29000, "Quimper");
@@ -18,7 +19,9 @@ public class TestPersonne {
 		
 		p2.changerNom("Martin");
 		p2.changerPrenom("Jean");
+		
 		p2.changerAdresse(a);
+		p2.retourneNom();
 		p2.afficherIdentite();
 		
 

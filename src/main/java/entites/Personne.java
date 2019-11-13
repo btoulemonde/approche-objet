@@ -32,15 +32,15 @@ public class Personne {
 		this.adresse = adresse;
 	}
 	
-	public String retourneNom (String nom){
+	public String retourneNom (){
 		return nom;
 	}
 	
-	public String retournePrenom (String prenom){
+	public String retournePrenom (){
 		return prenom;
 	}
 	
-	public AdressePostale retourneAdresse (AdressePostale adresse){
+	public AdressePostale retourneAdresse (){
 		return adresse;
 	}
 }
