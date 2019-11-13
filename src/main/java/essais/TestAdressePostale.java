@@ -13,6 +13,7 @@ public class TestAdressePostale {
 			
 		AdressePostale b = new AdressePostale(69, "rue de Douarnenez", 29000, "Quimper" );
 		
+	
 		
 			
 		
