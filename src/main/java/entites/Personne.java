@@ -4,6 +4,6 @@ public class Personne {
 	
 	public String nom;
 	public String prenom;
-	public int AdressePostale;	
+	public AdressePostale adresse;	
 
 }

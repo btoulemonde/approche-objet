@@ -8,26 +8,28 @@ public class TestPersonne {
 
 	public static void main(String[] args) {
 		
-		Personne a = new Personne ();
-		a.nom = "Toulemonde";
-		a.prenom = "Baptiste";
-		AdressePostale c = new AdressePostale();
-		c.numeroRue = 12;
-		c.libelleRue = "rue du chevrefeuille";
-		c.codePostal = 34000;
-		c.ville = "Montpellier";
+		AdressePostale a = new AdressePostale();
+		a.numeroRue = 12;
+		a.libelleRue = "rue du chevrefeuille";
+		a.codePostal = 34000;
+		a.ville = "Montpellier";
 		
-		Personne b = new Personne ();
-		b.nom = "Toulemonde";
-		b.prenom = "Baptiste";
-		AdressePostale d = new AdressePostale();
-		d.numeroRue = 12;
-		d.libelleRue = "rue du chevrefeuille";
-		d.codePostal = 34000;
-		d.ville = "Montpellier";
+		Personne p1 = new Personne ();
+		p1.nom = "Toulemonde";
+		p1.prenom = "Baptiste";
+		p1.adresse = a;
+		
+		AdressePostale b = new AdressePostale();
+		b.numeroRue = 69;
+		b.libelleRue = "rue de Douarnenez";
+		b.codePostal = 29000;
+		b.ville = "Quimper";	
+	
+		Personne p2 = new Personne ();
+		p2.nom = "Toulemonde";
+		p2.prenom = "Baptiste";
+		p2.adresse  = b;
 
-		System.out.println(a);
-		
 	}
 
 }
