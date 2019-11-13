@@ -2,7 +2,7 @@ package entites;
 
 public class AdressePostale {
 
-	int numéroRue;
+	int numeroRue;
 	String libelleRue;
 	int codePostal;
 	String ville;
