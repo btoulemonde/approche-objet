@@ -12,6 +12,7 @@ public class TestPersonne {
 
 		Personne p1 = new Personne ("Toulemonde", "Baptiste", a);
 		
+		
 		AdressePostale b = new AdressePostale(69, "rue de Douarnenez", 29000, "Quimper" );
 
 		Personne p2 = new Personne ("Toulemonde", "Baptiste", b);
