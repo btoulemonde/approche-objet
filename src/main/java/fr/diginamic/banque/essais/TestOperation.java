@@ -17,7 +17,7 @@ public class TestOperation {
 		double soldeGlobal = 0.0;
 		for (int i = 0; i < operations.length; i++) {
 			System.out.println(operations[i]);
-			if (operations[i].afficherType().equals("crÃ©dit")) {
+			if (operations[i].afficherType().equals("crédit")) {
 				soldeGlobal += operations[i].getMontantOperation();
 			} else {
 				soldeGlobal -= operations[i].getMontantOperation();
