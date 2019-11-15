@@ -1,6 +1,6 @@
 package fr.diginamic.essais;
 
-import fr.diginamic.entites.Cercle;
+import fr.diginamic.banque.entites.Cercle;
 import fr.diginamic.entites.ObjetGeometrique;
 import fr.diginamic.entites.Rectangle;
 

@@ -1,8 +1,8 @@
-package fr.diginamic.essais;
+package fr.diginamic.banque.essais;
 
-import fr.diginamic.entites.Credit;
-import fr.diginamic.entites.Debit;
-import fr.diginamic.entites.Operation;
+import fr.diginamic.banque.entites.Credit;
+import fr.diginamic.banque.entites.Debit;
+import fr.diginamic.banque.entites.Operation;
 
 public class TestOperation {
 
