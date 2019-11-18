@@ -1,10 +1,11 @@
 package sets;
 
+import java.lang.reflect.GenericArrayType;
 import java.util.Collections;
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
-
+import fr.diginamic.maps.Pays;
 /*
  * Créez une classe Pays possédant 3 attributs : nom, nb d’habitants, PIB/habitant.
 • Créez un HashSet de pays contenant les pays suivants avec les informations correctes de nombre d’habitants et de PIB/Hab:

@@ -1,9 +1,5 @@
 package fr.diginamic.maps;
-/*
-Tâches à réaliser :
-• Créer une map appelée map3 et qui contient l’ensemble des données des 2 maps précédentes 
-avec les mêmes clés et les mêmes valeurs
- */
+
 
 import java.util.HashMap;
 import java.util.Iterator;
@@ -28,21 +24,26 @@ public class FusionMap {
 		
 		//fusion des deux maps
 		Iterator<Integer> ite = map1.keySet().iterator();
-		Iterator<String>couleur = map1.values().iterator();
+		
 		while(ite.hasNext()){
 			Integer a = ite.next();
-			String b = couleur.next();
+			String b = map1.get(a);
 		map3.put(a, b);
 		}
 		Iterator<Integer> ite2 = map2.keySet().iterator();
-		Iterator<String>couleur2 = map2.values().iterator();
+		
 		while(ite2.hasNext()){
 			Integer a = ite2.next();
-			String b = couleur2.next();
+			String b = map2.get(a);
 		map3.put(a, b);
 		
 		}
-		System.out.println(map3);		
+		System.out.println(map3);	
+		
+		map3.putAll(map1);
+		map3.putAll(map2);
+		System.out.println(map3);
+		
 
 	}
 

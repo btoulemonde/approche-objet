@@ -3,6 +3,9 @@ package fr.diginamic.listes;
 import java.util.ArrayList;
 import java.util.List;
 
+import javax.swing.plaf.synth.SynthSeparatorUI;
+import javax.swing.text.html.HTMLDocument.Iterator;
+
 /*
  * Dans cette classe instanciez une ArrayList de String contenant les éléments suivants :
 o Nice, Carcassonne, Narbonne, Lyon, Foix, Pau, Marseille, Tarbes
@@ -38,8 +41,22 @@ public class TestListString {
 		System.out.println(villeLongue);
 		
 		//nom en majuscule
+		List <String> liste2 = new ArrayList<>();
+		for (String ville : liste){
+			liste2.add(ville.toUpperCase());
+			
+		}
+				
+		System.out.println(liste2);
 		
+	//supprimer les villes commencant par N
+		for(int i = 0; i<liste.size();i++) {
+			if(liste.get(i).subSequence(0, 1).equals("N")) {
+				liste.remove(i);
+			}
+		}
 		
+		System.out.println(liste);
 			
 		
 		

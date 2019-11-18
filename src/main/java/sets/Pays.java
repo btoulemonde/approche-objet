@@ -35,7 +35,25 @@ public class Pays {
 		}
 		@Override
 		public String toString() {
-			return "Pays [nom=" + nom + ", nbHab=" + nbHab + ", pIBHab=" + pIBHab + "]";
+			return " [Pays=" + nom + ", nbHab=" + nbHab + ", pIBHab=" + pIBHab + "]";
+		}
+		public String getNom() {
+			return nom;
+		}
+		public void setNom(String nom) {
+			this.nom = nom;
+		}
+		public long getNbHab() {
+			return nbHab;
+		}
+		public void setNbHab(long nbHab) {
+			this.nbHab = nbHab;
+		}
+		public double getpIBHab() {
+			return pIBHab;
+		}
+		public void setpIBHab(double pIBHab) {
+			this.pIBHab = pIBHab;
 		}
 		
 

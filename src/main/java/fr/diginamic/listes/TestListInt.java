@@ -39,7 +39,7 @@ public class TestListInt {
 		 
 		for (int i =0; i<liste.size(); i++) {
 			if (liste.get(i)<0) {
-				liste.set(i, (liste.get(i)*-1));
+				liste.set(i, (-liste.get(i)));
 
 			}
 			
