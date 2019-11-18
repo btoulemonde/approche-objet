@@ -39,9 +39,9 @@ public class TestListString {
 		
 		//nom en majuscule
 		
-		System.out.println(liste.toUpperCase);
+		
 			
-		}
+		
 		
 		
 		
