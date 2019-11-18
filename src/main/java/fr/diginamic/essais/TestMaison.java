@@ -14,7 +14,7 @@ public class TestMaison {
 		Maison maison1 = new Maison();
 		
 		
-		maison1.ajoutPiece(new Chambre(15, 0));
+		maison1.ajoutPiece(new Chambre(20, 0));
 		maison1.ajoutPiece(new Chambre(12, 1));
 		maison1.ajoutPiece(new Chambre(11, 1));
 		maison1.ajoutPiece(new Cuisine(9,0));
