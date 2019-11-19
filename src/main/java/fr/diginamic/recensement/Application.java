@@ -3,6 +3,7 @@ package fr.diginamic.recensement;
 import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Collections;
 import java.util.List;
 import fr.diginamic.recensement.Ville;
 
@@ -50,6 +51,50 @@ public class Application {
 				System.out.println(a);
 			}
 		}
+		//afficher population herault
+		int populationDepartement = 0;
+		for (Ville a : villes){
+			if(a.getCodeDepartement().equals("34")){
+				populationDepartement += a.getPopulation();
+			
+			}
+		}
+		System.out.println("Population totale du département de l'Hérault: "+ populationDepartement+"habitants");
+		
+		//afficher la plus petite ville du departement de l'hérault
+		int popMin = Integer.MAX_VALUE;
+		String villeMin =null;
+		for (Ville a: villes){
+			if (a.getCodeDepartement().equals("34") && a.getPopulation()<popMin){
+				popMin = a.getPopulation();
+				villeMin = a.getNomCommune();
+			}
+		}
+		System.out.println("La ville la plus petite de l'hérault est: "+ villeMin + "avec " + popMin +" habitants.");
+		
+		//creation d'une liste contenant uniquement les villes de l'herault
+		List<Ville> villesHerault = new ArrayList<>();
+		for(Ville a : villes){
+			if (a.getCodeDepartement().equals("34")){
+				villesHerault.add(a);
+			}
+		}
+		
+		
+		//10 plus petites villes du département
+		Collections.sort(villesHerault,new ComparatorVillePopulationCroissante());
+		
+		System.out.println("\nLes 10 plus petites villes de l'hérault sont: ");
+		for (int i = 0; i<10; i++){
+			System.out.println(villesHerault.get(i));
+		}
+		
+		//10 plus grandes villes du département
+				Collections.sort(villesHerault,new ComparatorVillePopulationDecroissante());
+				System.out.println("\nLes 10 plus grandes villes de l'hérault sont: ");
+				for (int i = 0; i<10; i++){
+					System.out.println(villesHerault.get(i));
+				}
 	}
 
 }

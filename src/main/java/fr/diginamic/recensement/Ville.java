@@ -1,6 +1,8 @@
 package fr.diginamic.recensement;
 
-public class Ville {
+
+
+public class Ville  {
 
 	private String codeRegion;
 	private String nomRegion;
@@ -27,6 +29,7 @@ public class Ville {
 		return nomCommune + " " + codeDepartement + " " + nomRegion + " -> " + population;
 	}
 
+	
 	/**
 	 * @return the codeRegion
 	 */
