@@ -4,8 +4,10 @@ import java.io.File;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.Collections;
+import java.util.HashMap;
 import java.util.List;
 import fr.diginamic.recensement.Ville;
+import fr.diginamic.recensement.Departement;
 
 import org.apache.commons.io.FileUtils;
 
@@ -47,18 +49,18 @@ public class Application {
 		// rechercher et affiche montpellier + infos
 		for (Ville a : villes) {
 			if (a.getNomCommune().equals("Montpellier")) {
-				System.out.println("\n"+a);
+				System.out.println("\n" + a);
 			}
 		}
 		// afficher population herault
-		int populationDepartement = 0;
+		int populationHerault = 0;
 		for (Ville a : villes) {
 			if (a.getCodeDepartement().equals("34")) {
-				populationDepartement += a.getPopulation();
+				populationHerault += a.getPopulation();
 
 			}
 		}
-		System.out.println("\nPopulation totale du département de l'Hérault: " + populationDepartement + "habitants");
+		System.out.println("\nPopulation totale du département de l'Hérault: " + populationHerault + "habitants");
 
 		// afficher la plus petite ville du departement de l'hérault
 		int popMin = Integer.MAX_VALUE;
@@ -69,7 +71,8 @@ public class Application {
 				villeMin = a.getNomCommune();
 			}
 		}
-		System.out.println("\nLa ville la plus petite de l'hérault est: " + villeMin + "avec " + popMin + " habitants.");
+		System.out
+				.println("\nLa ville la plus petite de l'hérault est: " + villeMin + "avec " + popMin + " habitants.");
 
 		// creation d'une liste contenant uniquement les villes de l'herault
 		List<Ville> villesHerault = new ArrayList<>();
@@ -94,14 +97,63 @@ public class Application {
 			System.out.println(villesHerault.get(i));
 		}
 
-		//population de la région occitanie
+		// population de la région occitanie
 		int populationOccitanie = 0;
-		for (Ville a: villes){
-			if(a.getNomRegion().equals("Occitanie")){
+		for (Ville a : villes) {
+			if (a.getNomRegion().equals("Occitanie")) {
 				populationOccitanie += a.getPopulation();
 			}
 		}
-		System.out.println("\nLa population tatale de la région Occitanie est de " + populationOccitanie+" habitatnts");
-	}
+		System.out
+				.println("\nLa population tatale de la région Occitanie est de " + populationOccitanie + " habitatnts");
 
+		// creation d'une liste contenant uniquement les villes de la région occitanie
+		List<Ville> villesOccitanie = new ArrayList<>();
+		for (Ville a : villes) {
+			if (a.getNomRegion().equals("Occitanie")) {
+				villesOccitanie.add(a);
+			}
+		}
+		
+		// 10 plus grandes villes de la région occitanie
+		Collections.sort(villesOccitanie, new ComparatorVillePopulationDecroissante());
+		System.out.println("\nLes 10 plus grandes villes de la région Occitanie sont: ");
+		for (int i = 0; i < 10; i++) {
+			System.out.println(villesOccitanie.get(i));
+		}
+		//département le plus peuplé de la région Occitanie
+		System.out.println("\nLe département le plus peuplé de la région Occitanie est: ");
+		HashMap<String, Departement> mapDepts = new HashMap<>();
+		for (Ville a : villes){
+			
+			//cherche toutes les villes de la région
+			if(a.getNomRegion().equals("Occitanie")){
+				 //on recup departement de la région
+				String codeDept = a.getCodeDepartement();
+				
+				//puis on cherche dep stockè dans la map
+				Departement dept = mapDepts.get(codeDept);
+				
+				//si dept precedent n'existe pas on le stock dans la map
+				if(dept == null){
+					dept = new Departement(a.getCodeDepartement());
+					mapDepts.put(a.getCodeDepartement(), dept);
+				}
+				
+				//on ajoute la pop de la ville du dep
+				dept.setPopulation(dept.getPopulation()+a.getPopulation());
+			}
+		}
+		
+		//on recup les dept dans une liste
+		ArrayList<Departement> listeDepts = new ArrayList<>();
+		listeDepts.addAll(mapDepts.values());
+		
+		Collections.sort(listeDepts,new ComparatorDepartementPopulationDecroissante());
+		for (int i = 0; i<1; i++){
+			System.out.println(listeDepts.get(i));
+		}
+		
+		
+	}
 }
