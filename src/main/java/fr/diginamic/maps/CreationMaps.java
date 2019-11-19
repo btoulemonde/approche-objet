@@ -15,7 +15,8 @@ public class CreationMaps {
 		mapSalaire.put("Ingrid", 2015);
 		mapSalaire.put("Chantal", 2418);
 		
-		System.out.println(mapSalaire.size());
+		//affichage taille map
+		System.out.println("taille map: "+ mapSalaire.size());
 		
 		
 

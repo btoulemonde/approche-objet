@@ -3,8 +3,7 @@ package fr.diginamic.listes;
 import java.util.ArrayList;
 import java.util.List;
 
-import javax.swing.plaf.synth.SynthSeparatorUI;
-import javax.swing.text.html.HTMLDocument.Iterator;
+
 
 /*
  * Dans cette classe instanciez une ArrayList de String contenant les éléments suivants :
@@ -31,14 +30,14 @@ public class TestListString {
 		
 		//ville la plus longue
 		int maxLettres = 0;
-		String villeLongue = " ";
+		String villeLongue = null;
 		for(String ville : liste){
 			if(ville.length()>maxLettres){
 				maxLettres = ville.length();
 				villeLongue = ville;
 			}
 		}
-		System.out.println(villeLongue);
+		System.out.println("ville la plus longue" + villeLongue);
 		
 		//nom en majuscule
 		List <String> liste2 = new ArrayList<>();

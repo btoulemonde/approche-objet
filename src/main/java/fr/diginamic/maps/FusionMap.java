@@ -40,6 +40,7 @@ public class FusionMap {
 		}
 		System.out.println(map3);	
 		
+		//deuxieme méthode..
 		map3.putAll(map1);
 		map3.putAll(map2);
 		System.out.println(map3);

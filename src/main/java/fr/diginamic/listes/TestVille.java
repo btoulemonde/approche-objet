@@ -1,7 +1,7 @@
 package fr.diginamic.listes;
 
 import java.util.ArrayList;
-import java.util.Collections;
+
 import java.util.Iterator;
 import java.util.List;
 
@@ -44,12 +44,11 @@ public abstract class TestVille {
 
 		// supp la ville la moins peuplée
 		int nbrMin = nbrMax;
-		Ville villeMin = null;
+		
 		Iterator<Ville> iter = liste.iterator();
 		while (iter.hasNext()) {
 			Ville ville2 = iter.next();
 			if (ville2.getNbrHab() < nbrMin) {
-				villeMin = ville2;
 				nbrMin = ville2.getNbrHab();
 				iter.remove();
 			}

@@ -1,6 +1,9 @@
 package fr.diginamic.maps;
 
 import java.util.HashMap;
+import java.util.Iterator;
+
+import sets.Pays;
 
 /*
  
@@ -13,16 +16,31 @@ import java.util.HashMap;
 public class MapsPays {
 
 	public static void main(String[] args) {
+		//creez une map permettant de stocker les instances de pays (valeur) en fonction de leur nom (clé)
+
 		HashMap<String, Pays> map = new HashMap<String, Pays>();
-		map.put("USA", new Pays("USA", 200, 50));
-		map.put("France", new Pays("France", 60, 45));
-		map.put("Italie", new Pays("Italie", 50, 38));
-		map.put("UK", new Pays("UK", 45, 40));
-		map.put("Allemagne", new Pays("Allemagne", 70, 47));
-
-
+		map.put("USA", new Pays("USA", 327167434, 55805.204));
+		map.put("France", new Pays("France", 67795000, 42878));
+		map.put("Italie", new Pays("Italie", 60483973, 29866.0));
+		map.put("UK", new Pays("Uk", 65105246, 43770.69));
+		map.put("Allemagne", new Pays("Allemagne", 83019200, 47589.97));
+		map.put("Japon", new Pays("Japon", 126330302, 39058.5));
+		map.put("Russie", new Pays("Russie", 146780700, 11099.2));
+		map.put("Chine", new Pays("Chine", 1417913092, 19392.36));
+		map.put("Inde", new Pays("Inde", 1296834042, 1626.98));
 		
-
+		//Recherchez et supprimez le pays qui a le moins d’habitants
+		long nbrMin= 2000000000;
+		
+		Iterator<Pays> iterator = map.values().iterator();
+		while(iterator.hasNext()){
+			Pays pays = iterator.next();
+			if(pays.getNbHab()< nbrMin){
+				nbrMin = pays.getNbHab();
+				iterator.remove();
+			}
+			}
+				System.out.println(map);
 	}
 
 }

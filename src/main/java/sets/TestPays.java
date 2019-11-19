@@ -1,11 +1,12 @@
 package sets;
 
-import java.lang.reflect.GenericArrayType;
-import java.util.Collections;
+
+
 import java.util.HashSet;
 import java.util.Iterator;
 import java.util.Set;
-import fr.diginamic.maps.Pays;
+import sets.Pays;
+
 /*
  * Créez une classe Pays possédant 3 attributs : nom, nb d’habitants, PIB/habitant.
 • Créez un HashSet de pays contenant les pays suivants avec les informations correctes de nombre d’habitants et de PIB/Hab:
@@ -28,26 +29,66 @@ o Inde
 public class TestPays {
 
 	public static void main(String[] args) {
-		
 
 		Set<Pays> set = new HashSet<>();
-		
-		set.add(new Pays("USA", 80000000, 50000.0));
-		set.add(new Pays("France", 60000000, 45000.0));
-		set.add(new Pays("Allemagne", 70000000, 48000.0));
-		set.add(new Pays("UK", 50000000, 43000.0));
-		
-		
-			
-		
-		
-		
-		
-		
-		
-		
-		
 
+		set.add(new Pays("USA", 327167434, 55805.204));
+		set.add(new Pays("France", 67795000, 42878));
+		set.add(new Pays("Allemagne", 83019200, 47589.97));
+		set.add(new Pays("Uk", 65105246, 43770.69));
+		set.add(new Pays("Italie", 60483973, 29866.0));
+		set.add(new Pays("Japon", 126330302, 39058.5));
+		set.add(new Pays("Russie", 146780700, 11099.2));
+		set.add(new Pays("Chine", 1417913092, 19392.36));
+		set.add(new Pays("Inde", 1296834042, 1626.98));
+
+		// pib/hab max
+		double pibMax = 0.0;
+		String paysPIBMax = null;
+		Iterator<Pays> ite = set.iterator();
+		while (ite.hasNext()) {
+			Pays pays = ite.next();
+			if (pays.getpIBHab() > pibMax) {
+				pibMax = pays.getpIBHab();
+				paysPIBMax = pays.getNom();
+
+			}
+		}
+		System.out.println(
+				"le pays qui a le plus grand PIB/hab est: " + paysPIBMax + " avec un PIB/hab de : " + pibMax + " $");
+
+		// pib total le plus important
+		
+		double pibTotalMax = 0.0;
+		String paysPIBTotalMax = null;
+		Iterator<Pays> ite2 = set.iterator();
+		while(ite2.hasNext()){
+			Pays pays2 = ite2.next();
+			if (pays2.pibTotal(pays2.getNbHab(), pays2.getpIBHab())> pibTotalMax){
+				pibTotalMax = pays2.pibTotal(pays2.getNbHab(), pays2.getpIBHab());
+				paysPIBTotalMax = pays2.getNom();
+			}
+		}
+		System.out.println("pays avec le pib total max: " + paysPIBTotalMax);
+		
+		// pib total le moins important
+		
+				double pibTotalMin = pibTotalMax;
+				String paysPIBTotalMin = null;
+				Iterator<Pays> ite3 = set.iterator();
+				while(ite3.hasNext()){
+					Pays pays3 = ite3.next();
+					if (pays3.pibTotal(pays3.getNbHab(), pays3.getpIBHab())< pibTotalMin){
+						pibTotalMin = pays3.pibTotal(pays3.getNbHab(), pays3.getpIBHab());
+						paysPIBTotalMin = pays3.getNom().toUpperCase();
+						ite3.remove();
+					}
+				}
+				System.out.println("pays avec le pib total min: " + paysPIBTotalMin);
+				
+				
+				
+				System.out.println(set);
 	}
 
 }
