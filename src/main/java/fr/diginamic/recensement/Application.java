@@ -121,8 +121,12 @@ public class Application {
 		for (int i = 0; i < 10; i++) {
 			System.out.println(villesOccitanie.get(i));
 		}
+		
+		//---------------------------------------------------------------------------------
 		//département le plus peuplé de la région Occitanie
 		System.out.println("\nLe département le plus peuplé de la région Occitanie est: ");
+		
+		
 		HashMap<String, Departement> mapDepts = new HashMap<>();
 		for (Ville a : villes){
 			
@@ -155,5 +159,82 @@ public class Application {
 		}
 		
 		
+		//--------------------------------------------------------------------------------------------
+		//Afficher les 10 régions les plus peuplé de France
+		System.out.println("\nLes 10 régions les plus peuplées de France sont: ");
+		
+		//creation map
+		HashMap<String, Region> mapRegion = new HashMap<>();
+		
+		//on fait defiler les villes
+		for (Ville a : villes){
+			//on récupère la région
+			String nomRégion = a.getNomRegion();
+			
+			//on la cherche dans la map
+			Region region = mapRegion.get(nomRégion);
+			
+			 //si elle nexiste pas encore on l'integre dans la map
+			if(region == null){
+				region = new Region(a.getNomRegion());
+				mapRegion.put(a.getNomRegion(), region);
+			}
+			// on ajoute la pop de la ville a la region
+			region.setPopulation(region.getPopulation()+a.getPopulation());
+		}
+		
+		//recupertion des regions dans une liste
+		ArrayList<Region> listeRegion = new ArrayList<>();
+		listeRegion.addAll(mapRegion.values());
+		
+		//on affiche les 10 regions les plus peuplees
+		Collections.sort(listeRegion,new ComparatorRegionPopulationDecroissante());
+		for(int i = 0; i<10; i++){
+			System.out.println(listeRegion.get(i));
+		}
+		
+		//--------------------------------------------------------------------------
+		//Afficher les 10 departements les plus peuplé de France
+				System.out.println("\nLes 10 départements les plus peuplés de France sont: ");
+				
+				//creation map
+				HashMap<String, Departement> mapDepartement = new HashMap<>();
+				
+				//on fait defiler les villes
+				for (Ville a : villes){
+					//on récupère le dep
+					String codeDepartement = a.getCodeDepartement();
+					
+					//on la cherche dans la map
+					Departement departement = mapDepartement.get(codeDepartement);
+					
+					 //si elle nexiste pas encore on l'integre dans la map
+					if(departement == null){
+						departement = new Departement(a.getCodeDepartement());
+						mapDepartement.put(a.getCodeDepartement(), departement);
+					}
+					// on ajoute la pop de la ville au dep
+					departement.setPopulation(departement.getPopulation()+a.getPopulation());
+				}
+				
+				//recupertion des dep dans une liste
+				ArrayList<Departement> listeDepartement = new ArrayList<>();
+				listeDepartement.addAll(mapDepartement.values());
+				
+				//on affiche les 10 départements les plus peuples
+				Collections.sort(listeDepartement, new ComparatorDepartementPopulationDecroissante());
+				for(int i = 0; i<10; i++){
+					System.out.println(listeDepartement.get(i));
+				}
+				
+			//-------------------------------------------------------------------------
+			//afficher les 10 villes les plus peuplées
+				Collections.sort(villes, new ComparatorVillePopulationDecroissante());
+				System.out.println("\nLes 10 plus grandes villes France sont: ");
+				for (int i = 0; i < 10; i++) {
+					System.out.println(villes.get(i));
+				}	
+				
 	}
 }
+
