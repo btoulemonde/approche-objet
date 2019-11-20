@@ -128,6 +128,7 @@ public class Application {
 		
 		
 		HashMap<String, Departement> mapDepts = new HashMap<>();
+		
 		for (Ville a : villes){
 			
 			//cherche toutes les villes de la région

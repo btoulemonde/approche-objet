@@ -9,11 +9,29 @@ public class Compte {
 		this.numeroCompte = numeroCompte;
 		this.soldeInitial = soldeCompte;
 	}
-	//retourne numero et solde compte
-	public String toString () {
-		return numeroCompte + " " + soldeInitial + " â‚¬";
+
+	// méthode equals
+
+	public boolean equals(Object obj) {
+		if (!(obj instanceof Compte)) {
+			return false;
+		}
+		Compte autre = (Compte) obj;
+		return this.numeroCompte.equals(autre.getNumeroCompte()) && this.soldeInitial == autre.getSoldeCompte();
 	}
- 
+
+	// retourne numero et solde compte
+
+	/*
+	 * (non-Javadoc)
+	 * 
+	 * @see java.lang.Object#toString()
+	 */
+	@Override
+	public String toString() {
+		return "Compte [numeroCompte=" + numeroCompte + ", soldeInitial=" + soldeInitial + "]";
+	}
+
 	// getters et setters
 	public String getNumeroCompte() {
 		return numeroCompte;
