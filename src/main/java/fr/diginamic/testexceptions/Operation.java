@@ -9,4 +9,13 @@ public class Operation {
 		}
 		return a / b;
 	}
+	
+	//méthode static diviserRuntime
+	public static double diviserRuntime(double a, double b){
+		if (b == 0) {
+			throw new DenominateurNulRuntime("Le dénominateur ne peut pas être nul");
+		}
+		return a / b;
+	}
+	
 }
