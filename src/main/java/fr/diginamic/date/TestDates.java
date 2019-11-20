@@ -4,7 +4,7 @@ import java.text.SimpleDateFormat;
 import java.util.Calendar;
 import java.util.Date;
 
-import fr.diginamic.oerations.CalculMoyenne;
+
 
 public class TestDates {
 
@@ -36,7 +36,7 @@ public class TestDates {
 		System.out.println(formattage.format(date3));
 
 		Calendar c2 = Calendar.getInstance();
-		Date date4 = c1.getTime();
+		Date date4 = c2.getTime();
 		
 		SimpleDateFormat formattage3 = new SimpleDateFormat("dd-MM-yyyy HH:mm:ss");
 		System.out.println(formattage3.format(date4));

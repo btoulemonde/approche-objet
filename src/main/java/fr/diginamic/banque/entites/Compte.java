@@ -1,4 +1,5 @@
 package fr.diginamic.banque.entites;
+import org.apache.commons.lang3.builder.EqualsBuilder;
 
 public class Compte {
 
@@ -17,8 +18,9 @@ public class Compte {
 			return false;
 		}
 		Compte autre = (Compte) obj;
-		return this.numeroCompte.equals(autre.getNumeroCompte()) && this.soldeInitial == autre.getSoldeCompte();
+		return new EqualsBuilder().append(numeroCompte, autre.getNumeroCompte()).isEquals() && this.soldeInitial == autre.getSoldeCompte();
 	}
+		//return new EqualsBuilder().append(numeroCompte, autre.getNumeroCompte()).isEqual() && this.soldeInitial == autre.getSoldeCompte();
 
 	// retourne numero et solde compte
 
