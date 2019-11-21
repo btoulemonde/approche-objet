@@ -14,8 +14,8 @@ o Foix, 9 700 hab.
 o Pau, 77 200 hab.
 o Marseille, 850 700 hab.
 o Tarbes, 40 600 hab.
-• Recherchez et affichez la ville la plus peuplée
-• Supprimez la ville la moins peuplée
+ï¿½ Recherchez et affichez la ville la plus peuplï¿½e
+ï¿½ Supprimez la ville la moins peuplï¿½e
  */
 public abstract class TestVille {
 
@@ -29,7 +29,8 @@ public abstract class TestVille {
 		liste.add(new Ville("Pau", 77200));
 		liste.add(new Ville("Marseille", 850700));
 		liste.add(new Ville("Tarbes", 40600));
-
+		
+		
 		int nbrMax = 0;
 		Ville villeMax = null;
 		Iterator<Ville> iterator = liste.iterator();
@@ -42,7 +43,7 @@ public abstract class TestVille {
 		}
 		System.out.println("La ville ayant le plus gand nombre d'habitants est: " + villeMax);
 
-		// supp la ville la moins peuplée
+		// supp la ville la moins peuplï¿½e
 		int nbrMin = nbrMax;
 		
 		Iterator<Ville> iter = liste.iterator();

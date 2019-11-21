@@ -1,7 +1,8 @@
-package fr.diginamic.recensement;
+package fr.diginamic.recensement.facile;
 
 import java.util.Comparator;
-import fr.diginamic.recensement.Ville;
+
+import fr.diginamic.recensement.facile.Ville;
 
 public class ComparatorVillePopulationDecroissante implements Comparator<Ville> {
 

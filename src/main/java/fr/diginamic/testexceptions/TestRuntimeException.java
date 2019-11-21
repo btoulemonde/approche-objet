@@ -7,13 +7,11 @@ public abstract class TestRuntimeException {
 		double op2= 0;
 		
 		
-		try {
+		
 			op1 = Operation.diviserRuntime(6, 3);
 			op2= Operation.diviserRuntime(6, 0);
 			
-		} catch (DenominateurNulRuntime e) {
-			System.out.println(e.getMessage());
-		}
+		
 		System.out.println(op1);
 		System.out.println(op2);
 

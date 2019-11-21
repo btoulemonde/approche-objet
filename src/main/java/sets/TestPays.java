@@ -8,8 +8,8 @@ import java.util.Set;
 import sets.Pays;
 
 /*
- * Créez une classe Pays possédant 3 attributs : nom, nb d’habitants, PIB/habitant.
-• Créez un HashSet de pays contenant les pays suivants avec les informations correctes de nombre d’habitants et de PIB/Hab:
+ * Crï¿½ez une classe Pays possï¿½dant 3 attributs : nom, nb dï¿½habitants, PIB/habitant.
+ï¿½ Crï¿½ez un HashSet de pays contenant les pays suivants avec les informations correctes de nombre dï¿½habitants et de PIB/Hab:
 o USA
 o France.
 o Allemagne.
@@ -20,11 +20,11 @@ o Japon.
 o Chine.
 o Russie.
 o Inde
-• Recherchez le pays avec le PIB/habitant le plus important
-• Recherchez le pays avec le PIB total le plus important
-• Modifiez le contenu du HashSet pour mettre en majuscule le pays qui a le PIB total le plus petit
-• Supprimez le pays dont le PIB total est le plus petit
-• Affichez l’ensemble des pays ainsi modifiés avec leur nom, nombre d’habitants et PIB total
+ï¿½ Recherchez le pays avec le PIB/habitant le plus important
+ï¿½ Recherchez le pays avec le PIB total le plus important
+ï¿½ Modifiez le contenu du HashSet pour mettre en majuscule le pays qui a le PIB total le plus petit
+ï¿½ Supprimez le pays dont le PIB total est le plus petit
+ï¿½ Affichez lï¿½ensemble des pays ainsi modifiï¿½s avec leur nom, nombre dï¿½habitants et PIB total
  */
 public class TestPays {
 

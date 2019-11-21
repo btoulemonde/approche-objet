@@ -7,16 +7,16 @@ import sets.Pays;
 
 /*
  
-• Dans ce TP nous allons retravailler avec la classe Pays et les informations des TPs précédent.
-• Dans cette classe, creez une map permettant de stocker les instances de pays (valeur) en fonction de leur nom (clé).
-• Recherchez et supprimez le pays qui a le moins d’habitants
-• Affichez l’ensemble des pays restants.
+ï¿½ Dans ce TP nous allons retravailler avec la classe Pays et les informations des TPs prï¿½cï¿½dent.
+ï¿½ Dans cette classe, creez une map permettant de stocker les instances de pays (valeur) en fonction de leur nom (clï¿½).
+ï¿½ Recherchez et supprimez le pays qui a le moins dï¿½habitants
+ï¿½ Affichez lï¿½ensemble des pays restants.
  */
 
 public class MapsPays {
 
 	public static void main(String[] args) {
-		//creez une map permettant de stocker les instances de pays (valeur) en fonction de leur nom (clé)
+		//creez une map permettant de stocker les instances de pays (valeur) en fonction de leur nom (clï¿½)
 
 		HashMap<String, Pays> map = new HashMap<String, Pays>();
 		map.put("USA", new Pays("USA", 327167434, 55805.204));
@@ -29,8 +29,8 @@ public class MapsPays {
 		map.put("Chine", new Pays("Chine", 1417913092, 19392.36));
 		map.put("Inde", new Pays("Inde", 1296834042, 1626.98));
 		
-		//Recherchez et supprimez le pays qui a le moins d’habitants
-		long nbrMin= 2000000000;
+		//Recherchez et supprimez le pays qui a le moins dï¿½habitants
+		long nbrMin= Long.MAX_VALUE;
 		
 		Iterator<Pays> iterator = map.values().iterator();
 		while(iterator.hasNext()){

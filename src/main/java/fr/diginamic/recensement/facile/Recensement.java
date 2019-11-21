@@ -1,4 +1,4 @@
-package fr.diginamic.recensement;
+package fr.diginamic.recensement.facile;
 
 import java.util.ArrayList;
 import java.util.List;

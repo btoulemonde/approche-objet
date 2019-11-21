@@ -2,18 +2,18 @@ package fr.diginamic.testexceptions;
 
 public class Operation {
 
-	// méthode diviser
+	// mï¿½thode diviser
 	public static double diviser(double a, double b) throws DenominateurNul {
 		if (b == 0) {
-			throw new DenominateurNul("Le dénominateur ne peut pas être nul");
+			throw new DenominateurNul("Le dÃ©nominateur ne peut pas Ãªtre nul");
 		}
 		return a / b;
 	}
 	
-	//méthode static diviserRuntime
+	//mï¿½thode static diviserRuntime
 	public static double diviserRuntime(double a, double b){
 		if (b == 0) {
-			throw new DenominateurNulRuntime("Le dénominateur ne peut pas être nul");
+			throw new DenominateurNulRuntime("Le dÃ©nominateur ne peut pas Ãªtre nul");
 		}
 		return a / b;
 	}

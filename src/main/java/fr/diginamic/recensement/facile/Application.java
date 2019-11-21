@@ -1,4 +1,4 @@
-package fr.diginamic.recensement;
+package fr.diginamic.recensement.facile;
 
 import java.io.File;
 import java.io.IOException;
@@ -6,10 +6,11 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.HashMap;
 import java.util.List;
-import fr.diginamic.recensement.Ville;
-import fr.diginamic.recensement.Departement;
 
 import org.apache.commons.io.FileUtils;
+
+import fr.diginamic.recensement.facile.Departement;
+import fr.diginamic.recensement.facile.Ville;
 
 public class Application {
 
@@ -22,7 +23,7 @@ public class Application {
 			File file = new File("C:/work/recensement population 2016.csv");
 			lignes = FileUtils.readLines(file, "UTF-8");
 
-			// suppression première ligne du tableur
+			// suppression premiÃ¨re ligne du tableur
 			lignes.remove(0);
 
 			for (String ligne : lignes) {
@@ -33,7 +34,7 @@ public class Application {
 				String nomCommune = morceaux[5];
 				int population = Integer.parseInt(morceaux[6].replace(" ", "").trim());
 
-				// On cree maintenant la ville avec toutes ses données
+				// On cree maintenant la ville avec toutes ses donnÃ©es
 				Ville ville = new Ville(codeRegion, nomRegion, codeDepartement, nomCommune, population);
 
 				// ajout a la liste
@@ -60,9 +61,9 @@ public class Application {
 
 			}
 		}
-		System.out.println("\nPopulation totale du département de l'Hérault: " + populationHerault + "habitants");
+		System.out.println("\nPopulation totale du dï¿½partement de l'Hï¿½rault: " + populationHerault + "habitants");
 
-		// afficher la plus petite ville du departement de l'hérault
+		// afficher la plus petite ville du departement de l'hÃ©rault
 		int popMin = Integer.MAX_VALUE;
 		String villeMin = null;
 		for (Ville a : villes) {
@@ -72,7 +73,7 @@ public class Application {
 			}
 		}
 		System.out
-				.println("\nLa ville la plus petite de l'hérault est: " + villeMin + "avec " + popMin + " habitants.");
+				.println("\nLa ville la plus petite de l'hï¿½rault est: " + villeMin + "avec " + popMin + " habitants.");
 
 		// creation d'une liste contenant uniquement les villes de l'herault
 		List<Ville> villesHerault = new ArrayList<>();
@@ -82,22 +83,22 @@ public class Application {
 			}
 		}
 
-		// 10 plus petites villes du département
+		// 10 plus petites villes du dÃ©partement
 		Collections.sort(villesHerault, new ComparatorVillePopulationCroissante());
 
-		System.out.println("\nLes 10 plus petites villes de l'hérault sont: ");
+		System.out.println("\nLes 10 plus petites villes de l'hï¿½rault sont: ");
 		for (int i = 0; i < 10; i++) {
 			System.out.println(villesHerault.get(i));
 		}
 
-		// 10 plus grandes villes du département
+		// 10 plus grandes villes du dÃ©partement
 		Collections.sort(villesHerault, new ComparatorVillePopulationDecroissante());
-		System.out.println("\nLes 10 plus grandes villes de l'hérault sont: ");
+		System.out.println("\nLes 10 plus grandes villes de l'hï¿½rault sont: ");
 		for (int i = 0; i < 10; i++) {
 			System.out.println(villesHerault.get(i));
 		}
 
-		// population de la région occitanie
+		// population de la rÃ©gion occitanie
 		int populationOccitanie = 0;
 		for (Ville a : villes) {
 			if (a.getNomRegion().equals("Occitanie")) {
@@ -105,9 +106,9 @@ public class Application {
 			}
 		}
 		System.out
-				.println("\nLa population tatale de la région Occitanie est de " + populationOccitanie + " habitatnts");
+				.println("\nLa population tatale de la rï¿½gion Occitanie est de " + populationOccitanie + " habitatnts");
 
-		// creation d'une liste contenant uniquement les villes de la région occitanie
+		// creation d'une liste contenant uniquement les villes de la rÃ©gion occitanie
 		List<Ville> villesOccitanie = new ArrayList<>();
 		for (Ville a : villes) {
 			if (a.getNomRegion().equals("Occitanie")) {
@@ -115,28 +116,28 @@ public class Application {
 			}
 		}
 		
-		// 10 plus grandes villes de la région occitanie
+		// 10 plus grandes villes de la rÃ©gion occitanie
 		Collections.sort(villesOccitanie, new ComparatorVillePopulationDecroissante());
-		System.out.println("\nLes 10 plus grandes villes de la région Occitanie sont: ");
+		System.out.println("\nLes 10 plus grandes villes de la rï¿½gion Occitanie sont: ");
 		for (int i = 0; i < 10; i++) {
 			System.out.println(villesOccitanie.get(i));
 		}
 		
 		//---------------------------------------------------------------------------------
-		//département le plus peuplé de la région Occitanie
-		System.out.println("\nLe département le plus peuplé de la région Occitanie est: ");
+		//dï¿½partement le plus peuplÃ© de la rÃ©gion Occitanie
+		System.out.println("\nLe dï¿½partement le plus peuplï¿½ de la rï¿½gion Occitanie est: ");
 		
 		
 		HashMap<String, Departement> mapDepts = new HashMap<>();
 		
 		for (Ville a : villes){
 			
-			//cherche toutes les villes de la région
+			//cherche toutes les villes de la rÃ©gion
 			if(a.getNomRegion().equals("Occitanie")){
-				 //on recup departement de la région
+				 //on recup departement de la rÃ©gion
 				String codeDept = a.getCodeDepartement();
 				
-				//puis on cherche dep stockè dans la map
+				//puis on cherche dep stockÃ© dans la map
 				Departement dept = mapDepts.get(codeDept);
 				
 				//si dept precedent n'existe pas on le stock dans la map
@@ -161,19 +162,19 @@ public class Application {
 		
 		
 		//--------------------------------------------------------------------------------------------
-		//Afficher les 10 régions les plus peuplé de France
-		System.out.println("\nLes 10 régions les plus peuplées de France sont: ");
+		//Afficher les 10 rÃ©gions les plus peuplÃ© de France
+		System.out.println("\nLes 10 rï¿½gions les plus peuplï¿½es de France sont: ");
 		
 		//creation map
 		HashMap<String, Region> mapRegion = new HashMap<>();
 		
 		//on fait defiler les villes
 		for (Ville a : villes){
-			//on récupère la région
-			String nomRégion = a.getNomRegion();
+			//on rÃ©cupÃ¨re la rÃ©gion
+			String nomRegion = a.getNomRegion();
 			
 			//on la cherche dans la map
-			Region region = mapRegion.get(nomRégion);
+			Region region = mapRegion.get(nomRegion);
 			
 			 //si elle nexiste pas encore on l'integre dans la map
 			if(region == null){
@@ -195,15 +196,15 @@ public class Application {
 		}
 		
 		//--------------------------------------------------------------------------
-		//Afficher les 10 departements les plus peuplé de France
-				System.out.println("\nLes 10 départements les plus peuplés de France sont: ");
+		//Afficher les 10 departements les plus peuplÃ© de France
+				System.out.println("\nLes 10 dï¿½partements les plus peuplï¿½s de France sont: ");
 				
 				//creation map
 				HashMap<String, Departement> mapDepartement = new HashMap<>();
 				
 				//on fait defiler les villes
 				for (Ville a : villes){
-					//on récupère le dep
+					//on rÃ©cupere le dep
 					String codeDepartement = a.getCodeDepartement();
 					
 					//on la cherche dans la map
@@ -222,14 +223,14 @@ public class Application {
 				ArrayList<Departement> listeDepartement = new ArrayList<>();
 				listeDepartement.addAll(mapDepartement.values());
 				
-				//on affiche les 10 départements les plus peuples
+				//on affiche les 10 dÃ©partements les plus peuples
 				Collections.sort(listeDepartement, new ComparatorDepartementPopulationDecroissante());
 				for(int i = 0; i<10; i++){
 					System.out.println(listeDepartement.get(i));
 				}
 				
 			//-------------------------------------------------------------------------
-			//afficher les 10 villes les plus peuplées
+			//afficher les 10 villes les plus peuplÃ©es
 				Collections.sort(villes, new ComparatorVillePopulationDecroissante());
 				System.out.println("\nLes 10 plus grandes villes France sont: ");
 				for (int i = 0; i < 10; i++) {
