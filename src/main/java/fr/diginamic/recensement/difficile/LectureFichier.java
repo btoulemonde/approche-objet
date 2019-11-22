@@ -9,14 +9,26 @@ import org.apache.commons.io.FileUtils;
 
 public class LectureFichier {
 
-	public static void main(String[] args) {
+	public static Recensement lire(String cheminFichier) {
+		Recensement recensement = new Recensement();
+		
 		List<String> lignes = new ArrayList<String>();
 		try{
-		File file = new File("C:/work/recensement.csv");
+		File file = new File(cheminFichier);
 		lignes = FileUtils.readLines(file, "UTF-8");
+		
+		lignes.remove(0);
+		
+		for (String ligne:lignes){
+			ParseurVille.ajoutLigne(recensement, ligne);
+		}
+		return recensement;
+		
 		}catch (IOException e){
 			System.out.println(e.getMessage());
+			return null;
 		}
+		
 	}
 
 }
