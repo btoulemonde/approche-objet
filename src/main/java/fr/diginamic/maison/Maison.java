@@ -8,12 +8,12 @@ public class Maison {
 		tab = new Piece[0];
 	}
 
-	// méthode pour ajouter un pièce à la maison
-	public void ajoutPiece(Piece nouvellePiece) {
+	// mï¿½thode pour ajouter un piï¿½ce ï¿½ la maison
+	public void ajoutPiece(Piece nouvellePiece)   {
 
 		// conditions pour ajouer pieces
 		if (nouvellePiece == null || nouvellePiece.getSuperficie() < 0 || nouvellePiece.getEtage() < 0) {
-			System.out.println("la nouvelle pièce n'est pas valide");
+			System.out.println("la nouvelle piÃ¨ce n'est pas valide");
 			return;
 		}
 		Piece[] tabTemp = new Piece[tab.length + 1];
@@ -44,7 +44,7 @@ public class Maison {
 		return sommeEtage;
 	}
 
-	// méthode pour calculer surface par type de pièce
+	// mï¿½thode pour calculer surface par type de piï¿½ce
 	public double superficiePiece(String type) {
 		double sommePiece = 0;
 		for (int i = 0; i < tab.length; i++) {
@@ -56,7 +56,7 @@ public class Maison {
 		return sommePiece;
 	}
 
-	// méthode nbr de piece par type
+	// mï¿½thode nbr de piece par type
 
 	public int nombreTypePiece(String type) {
 		int nbPiece = 0;
@@ -66,6 +66,13 @@ public class Maison {
 			}
 		}
 		return nbPiece;
+	}
+
+	/**
+	 * @return the tab
+	 */
+	public Piece[] getTab() {
+		return tab;
 	}
 
 }

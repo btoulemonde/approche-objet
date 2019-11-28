@@ -197,7 +197,7 @@ public class Application {
 		
 		//--------------------------------------------------------------------------
 		//Afficher les 10 departements les plus peuplé de France
-				System.out.println("\nLes 10 d�partements les plus peupl�s de France sont: ");
+				System.out.println("\nLes 10 départements les plus peuplés de France sont: ");
 				
 				//creation map
 				HashMap<String, Departement> mapDepartement = new HashMap<>();
