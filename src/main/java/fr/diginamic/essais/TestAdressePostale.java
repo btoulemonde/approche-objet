@@ -9,10 +9,11 @@ public class TestAdressePostale {
 		
 		AdressePostale a = new AdressePostale (12, "rue du chevrefeuille", 34000, "Montpellier");
 		
-		
+		System.out.println(a);
 			
 		AdressePostale b = new AdressePostale(69, "rue de Douarnenez", 29000, "Quimper" );
-		
+		System.out.println(b);
+
 	
 		
 			
